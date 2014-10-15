@@ -8,17 +8,14 @@ describe('Rock Paper Scissors', function() {
 	describe('Gestures of the game are', function() {
 
 		it('"rock"', function() {
-		rock = new Rock;
 		expect(rock.type).toEqual('rock');
 		});
 
 		it('"paper"', function() {
-		paper = new Paper;
 		expect(paper.type).toEqual('paper');
 		});
 
 		it('"scissors"', function() {
-		scissors = new Scissors;
 		expect(scissors.type).toEqual('scissors');	
 		});
 
@@ -26,16 +23,21 @@ describe('Rock Paper Scissors', function() {
 
 	describe('The rules', function() {
 
-		it('rock beat scissors', function() {
-		expect(rps.beatsScissors(rock)).toEqual('rock');
+		it('return a draw when weapons match', function() {
+			draw = new Draw;
+			expect(rps.versus(rock, rock)).toEqual(draw);
 		});
 
-		it('scissors beat paper', function() {
-		expect(rps.beatsPaper(scissors)).toEqual('scissors');
+		it('rock beats scissors', function() {
+		  expect(rps.versus(rock, scissors)).toEqual('rock');
+	 	});
+
+		it('scissors beats paper', function() {
+			expect(rps.versus(paper, scissors)).toEqual('scissors');
 		});
 
 		it('paper beats rock', function() {
-			expect(rps.beatsRock(paper)).toEqual('paper');
+			expect(rps.versus(paper, rock)).toEqual('paper');
 		});
 
 	});
