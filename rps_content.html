@@ -1,54 +1,31 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
+		<script src="jquery-1.11.1.min.js"></script>
 		<title>Rock/Paper/Scissors</title>
 	</head>
-<body>
-	<h1>Rock/Paper/Scissors</h1>
-	<h2>The rules of the game</h2>
-	<p>
-		Rock beats scissors<br>
-		Scissors beats paper<br>
-		Paper beats rock
-	</p>
-	
-	<img src = "public/images/rock.jpg" alt = "rock" title = "rock" />
-	<img src = "public/images/paper.jpg" alt = "paper" title = "paper" />
-	<img src = "public/images/scissor.jpg" alt = "scissors" title = "scissors" />
 
-	<div id="myDiv"></div>
+	<body>
+		<h1>Rock/Paper/Scissors</h1>
+		<h2>The rules of the game</h2>
+		<p>
+			Rock beats scissors<br>
+			Scissors beats paper<br>
+			Paper beats rock
+		</p>
 
-	<script type="text/javascript" src="src/Rps.js" ></script>
+		<div id="overlay1"></div>
+		
+		<ul id="choices">
+			<img id="rock" src="public/images/rock.jpg" alt="rock" title="rock"/>
+			<img id="paper" src="public/images/paper.jpg" height="280px" width="220px" alt="paper" title="paper"/>
+			<img id="scissors" src="public/images/scissor.jpg" alt="scissors" title="scissors"/>
+		</ul>
 
-		<script> 
-			turn = []
-			rules = new RPS()
-			document.getElementsByTagName('img')[0].onclick = function() { turn.push(new Rock)}
-			document.getElementsByTagName('img')[1].onclick = function() { turn.push(new Paper)}
-			document.getElementsByTagName('img')[2].onclick = function() { turn.push(new Scissors)}
+		<div id="myDiv"></div>
 
-			function displayWinner() {
-				var x = document.createElement("P");
-				var t = document.createTextNode(rules.versus(turn[0], turn[1]));
-   				 x.appendChild(t);
-   				 document.getElementById("myDiv").appendChild(x);
-			}
+		<script type="text/javascript" src="src/frontEnd.js" ></script>
+		<script type="text/javascript" src="src/Rps.js" ></script>
 
-			document.getElementsByTagName('img')[0].addEventListener("click", function() {
-				if (turn.length === 2) {
-				displayWinner()
-				turn = [] }
-			})  
-			document.getElementsByTagName('img')[1].addEventListener("click", function() {
-				if (turn.length === 2) {
-				displayWinner()
-				turn = [] }
-			})
-			document.getElementsByTagName('img')[2].addEventListener("click", function() {
-				if (turn.length === 2) {
-				displayWinner()
-				turn = [] }
-			})
-		</script>
-</body>
+	</body>
 </html>

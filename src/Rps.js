@@ -22,15 +22,15 @@ RPS.prototype.versus = function(choiceOne, choiceTwo) {
  }
 	if((choiceOne.type === ('rock') && choiceTwo.type === ('scissors')) ||
 	  (choiceOne.type === ('scissors') && choiceTwo.type === ('rock'))) 
-	return ('rock wins');
+	return ('Rock wins');
 
 	if((choiceOne.type === ('paper') && choiceTwo.type === ('scissors')) ||
 		(choiceOne.type === ('scissors') && choiceTwo.type === ('paper')))
-	return ('scissors wins');
+	return ('Scissors wins');
 
 	if((choiceOne.type === ('paper') && choiceTwo.type === ('rock')) ||
 		(choiceOne.type === ('rock') && choiceTwo.type === ('paper')))
-	return ('paper wins');
+	return ('Paper wins');
 };
 
 
