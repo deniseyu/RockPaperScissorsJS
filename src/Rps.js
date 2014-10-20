@@ -14,21 +14,23 @@ function Scissors() {
 
  function Draw() {};
 
+ rules = new RPS;
+
 RPS.prototype.versus = function(choiceOne, choiceTwo) {
  if(choiceOne.type === choiceTwo.type){
- 	return new Draw;
+ 	return ("It's a draw")
  }
 	if((choiceOne.type === ('rock') && choiceTwo.type === ('scissors')) ||
 	  (choiceOne.type === ('scissors') && choiceTwo.type === ('rock'))) 
-	return ('rock');
+	return ('rock wins');
 
 	if((choiceOne.type === ('paper') && choiceTwo.type === ('scissors')) ||
 		(choiceOne.type === ('scissors') && choiceTwo.type === ('paper')))
-	return ('scissors');
+	return ('scissors wins');
 
 	if((choiceOne.type === ('paper') && choiceTwo.type === ('rock')) ||
 		(choiceOne.type === ('rock') && choiceTwo.type === ('paper')))
-	return ('paper');
+	return ('paper wins');
 };
 
 
