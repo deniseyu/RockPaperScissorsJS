@@ -1,28 +1,35 @@
 <html>
 	<head>
+		<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="public/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
-		<script src="jquery-1.11.1.min.js"></script>
 		<title>Rock/Paper/Scissors</title>
 	</head>
 
 	<body>
-		<h1>Rock/Paper/Scissors</h1>
-		<h2>The rules of the game</h2>
-		<p>
-			Rock beats scissors<br>
-			Scissors beats paper<br>
-			Paper beats rock
-		</p>
+		<h1>Rock Paper Scissors</h1>
+		<h2>rock beats scissors | scissors beats paper | paper beats rock</h2>
 
-		<div id="overlay1"></div>
 		
-		<ul id="choices">
-			<img id="rock" src="public/images/rock.jpg" alt="rock" title="rock"/>
-			<img id="paper" src="public/images/paper.jpg" height="280px" width="220px" alt="paper" title="paper"/>
-			<img id="scissors" src="public/images/scissor.jpg" alt="scissors" title="scissors"/>
-		</ul>
+		<div id="choices">
+			<div id='rock_choice'>
+				<img src="public/images/rock.png" data-pick='rock' class='choice' />
+			</div>
+			<div id='paper_choice'>
+				<img src="public/images/paper.png" height="280px" width="220px" data-pick='paper' class='choice'/>
+			</div>
+			<div id='scissors_choice'>
+				<img src="public/images/scissors.png" data-pick='scissors' class='choice'/>
+			</div>
+		</div>
 
-		<div id="myDiv"></div>
+		<section class='results'>
+			<p id='player_choice' class='results'></p>
+			<p id='computer_choice' class='results'></p>
+			<p id='outcome' class='results'></p>
+		</section>
+
+		<script src="jquery-1.11.1.min.js"></script>
 
 		<script type="text/javascript" src="src/frontEnd.js" ></script>
 		<script type="text/javascript" src="src/Rps.js" ></script>
