@@ -1,66 +1,64 @@
-h1, h2, p {
+h1, h2 {
 	font-family: 'Architects Daughter', cursive;
 }
 
 h1 {
-	font-size: 8em;
+	font-size: 5em;
+	display: inline-block;
 }
 
 h2 {
-	font-size: 2em;
-	padding: 2%;
+	font-size: 1.5em;
+	padding: 1%;
 }
 
 p.results {
-	font-size: 1.5em;
+	font-family: 'Reenie Beanie', cursive;
+	font-size: 3em;
 	padding: 0.5%;
+	-webkit-animation: fade-in 5s;
 }
 
 #outcome {
-	font-size: 2em;
+	font-size: 4em;
+}
+
+#rules {
+	height: 5%;
+	padding-bottom: 1%;
 }
 
 body {
-	padding-top: 10%;
-	font-family: Arial, Helvetica, sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-html, body {
+	padding-top: 3%;
 	margin: 0 auto !important;
-	height: 100%;
 	text-align: center; 
+	background-image: url('../../cute-kittens.jpg');
+	background-size: 100%;
 }
 
 section.results {
 	padding: 2%;
 }
 
-#rock_choice, #paper_choice, #scissors_choice {
-	width: 300px;
-	height: 300px;
+#rock_choice, #paper_choice, #scissors_choice, #spock_choice, #lizard_choice {
+	width: 200px;
+	height: 200px;
 	border-radius: 50%;
 	display: inline-block;
+	margin: 1%;
 }
 
-#rock_choice {
-	background-color: #FF8DDD;
-}
-
-#paper_choice {
-	background-color: #FFF4B9;
-}
-
-#scissors_choice {
-	background-color: #5CCACC;
+.fadein {
+	-webkit-animation: fade-in 2s;
 }
 
 img.choice {
 	display: inline-block;
+	width: 200px;
+	height: 200px;
 }
 
-.choice:hover {
+img.choice:hover {
 	cursor: pointer;
 	-webkit-animation: infinite-spinning 1s;
 }
@@ -73,3 +71,9 @@ img.choice {
 		transform: rotateY(720deg);
 	}
 }
+
+@-webkit-keyframes fade-in {
+	from { opacity: 0;}
+	to {opacity: 1;}
+}
+

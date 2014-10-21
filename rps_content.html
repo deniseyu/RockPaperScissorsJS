@@ -1,31 +1,39 @@
 <html>
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Reenie+Beanie|Architects+Daughter' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="public/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
-		<title>Rock/Paper/Scissors</title>
+		<title>Rock Paper Scissors Lizard Spock</title>
 	</head>
 
 	<body>
-		<h1>Rock Paper Scissors</h1>
-		<h2>rock beats scissors | scissors beats paper | paper beats rock</h2>
+		<h1 class='rock'>Rock&nbsp</h1> 
+		<h1 class='paper'>Paper&nbsp</h1> 
+		<h1 class='scissors'>Scissors&nbsp</h1> 
+		<h1 class='lizard'>Lizard&nbsp</h1>
+		<h1 class='spock'>Spock</h1>
+		<div id='rules'><h2></h2></div>
 
-		
 		<div id="choices">
 			<div id='rock_choice'>
 				<img src="public/images/rock.png" data-pick='rock' class='choice' />
 			</div>
 			<div id='paper_choice'>
-				<img src="public/images/paper.png" height="280px" width="220px" data-pick='paper' class='choice'/>
+				<img src="public/images/paper.png" data-pick='paper' class='choice'/>
 			</div>
 			<div id='scissors_choice'>
 				<img src="public/images/scissors.png" data-pick='scissors' class='choice'/>
 			</div>
+			<div id='spock_choice'>
+				<img src="public/images/spock.png" data-pick='spock' class='choice' />
+			</div>
+			<div id='lizard_choice'>
+				<img src="public/images/lizard.png" data-pick='lizard' class='choice' />
+			</div>
 		</div>
 
 		<section class='results'>
-			<p id='player_choice' class='results'></p>
-			<p id='computer_choice' class='results'></p>
+			<p id='players_choices' class='results'></p>
 			<p id='outcome' class='results'></p>
 		</section>
 
