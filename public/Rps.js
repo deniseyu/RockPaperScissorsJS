@@ -1,41 +1,35 @@
-function RPS() {};
+function RPS() {
+	var playerChoice;
+	var computerChoice;
+};
 
 function Rock() {
 	this.type = 'rock';
-	this.message = 'Computer wins!'
 };
 
 function Paper() {
 	this.type = 'paper';
-	this.message = 'Computer wins!';
 };
 
 function Scissors() {
  	this.type = 'scissors';
- 	this.message = 'Computer wins!';
  };
 
  function Lizard(){
  	this.type = 'lizard';
- 	this.message = 'Computer wins!';
  };
 
  function Spock(){
  	this.type = 'spock';
- 	this.message = 'Computer wins!';
  };
 
  function Draw() {
  	this.type = 'draw';
- 	this.message = 'Draw!';
- };
-
- function PlayerChoice(my_type){
- 	this.type = my_type;
- 	this.message = 'You win!'
  };
 
 RPS.prototype.versus = function(choiceOne, choiceTwo) {
+	playerChoice = choiceOne;
+	computerChoice = choiceTwo;
  if(choiceOne.type === choiceTwo.type){
  	return (new Draw);
  }
@@ -45,10 +39,22 @@ RPS.prototype.versus = function(choiceOne, choiceTwo) {
 			((choiceOne.type === 'lizard') 	&& ((choiceTwo.type === 'spock') || (choiceTwo.type === 'paper'))) ||
 			((choiceOne.type === 'spock') 	&& ((choiceTwo.type === 'scissors') || (choiceTwo.type === 'rock')))	)		
 				 {
-		return choiceOne;
+		return playerChoice;
 	}
 	else {
-		return choiceTwo;
+		return computerChoice;
+	}
+};
+
+RPS.prototype.outcomeMessage = function(winningChoice){
+	if (winningChoice.type === 'draw') {
+		return "Draw!";
+	} 
+	if (winningChoice === playerChoice) {
+		return "You win!";
+	} 
+	else {
+		return "Computer wins!";
 	}
 };
 
@@ -57,5 +63,20 @@ RPS.prototype.RandomChoice = function() {
 	return choices[Math.floor(Math.random() * 5)]
 };
 
-
-
+RPS.prototype.createObject = function(choiceAsString) {
+	if (choiceAsString === 'Rock') {
+		return new Rock;
+	}
+	if (choiceAsString === 'Scissors') {
+		return new Scissors;
+	}
+	if (choiceAsString === 'Paper') {
+		return new Paper;
+	}
+	if (choiceAsString === 'Lizard') {
+		return new Lizard;
+	}
+	if (choiceAsString === 'Spock') {
+		return new Spock;
+	}
+};

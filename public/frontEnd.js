@@ -13,30 +13,31 @@ $(document).ready(function(){
 
 	$('h1.paper').mouseover(function(){
 		$('h2').addClass('fadein');
-		$('h2').text('paper covers rock | paper disproves spock')
+		$('h2').text('paper covers rock | paper disproves spock');
 	});
 
 	$('h1.scissors').mouseover(function(){
 		$('h2').addClass('fadein');
-		$('h2').text('scissors cuts paper | scissors decapitates lizard')
+		$('h2').text('scissors cuts paper | scissors decapitates lizard');
 	});
 
 	$('h1.lizard').mouseover(function(){
 		$('h2').addClass('fadein');
-		$('h2').text('lizard eats paper | lizard poisons spock')
+		$('h2').text('lizard eats paper | lizard poisons spock');
 	})
 
 	$('h1.spock').mouseover(function(){
-		$('h2').text('spock smashes scissors | spock vaporizes rock')
+		$('h2').addClass('fadein');
+		$('h2').text('spock smashes scissors | spock vaporizes rock');
 	});
 
 	$('img.choice').on('click', function(){
 		var rps = new RPS;
-		var playerchoice = new PlayerChoice($(this).data('pick'))
+		var playerchoice = rps.createObject($(this).data('pick'));
 		var computerchoice = rps.RandomChoice();
 
 		$('#players_choices').text('You chose ' + (playerchoice.type) + '! Computer chose ' + (computerchoice.type) + '!');
-		$('#outcome').text('Result: ' + (rps.versus(playerchoice, computerchoice).message));
+		$('#outcome').text('Result: ' + rps.outcomeMessage(rps.versus(playerchoice, computerchoice)));
 	
 	});
 
