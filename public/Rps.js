@@ -15,11 +15,11 @@ function Scissors() {
  	this.type = 'scissors';
  };
 
- function Lizard(){
+ function Lizard() {
  	this.type = 'lizard';
  };
 
- function Spock(){
+ function Spock() {
  	this.type = 'spock';
  };
 
@@ -30,14 +30,14 @@ function Scissors() {
 RPS.prototype.versus = function(choiceOne, choiceTwo) {
 	playerChoice = choiceOne;
 	computerChoice = choiceTwo;
- if(choiceOne.type === choiceTwo.type){
+ if(choiceOne.type === choiceTwo.type) {
  	return (new Draw);
  }
-	if (	((choiceOne.type === 'rock')	&& ((choiceTwo.type === 'scissors') || (choiceTwo.type === 'lizard'))) ||
+	if (((choiceOne.type === 'rock')	&& ((choiceTwo.type === 'scissors') || (choiceTwo.type === 'lizard'))) ||
 			((choiceOne.type === 'scissors')&& ((choiceTwo.type === 'paper') || (choiceTwo.type === 'lizard'))) ||
 			((choiceOne.type === 'paper') 	&& ((choiceTwo.type === 'rock') || (choiceTwo.type === 'spock'))) ||
 			((choiceOne.type === 'lizard') 	&& ((choiceTwo.type === 'spock') || (choiceTwo.type === 'paper'))) ||
-			((choiceOne.type === 'spock') 	&& ((choiceTwo.type === 'scissors') || (choiceTwo.type === 'rock')))	)		
+			((choiceOne.type === 'spock') 	&& ((choiceTwo.type === 'scissors') || (choiceTwo.type === 'rock'))))		
 				 {
 		return playerChoice;
 	}
